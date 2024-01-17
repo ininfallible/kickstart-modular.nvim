@@ -1,5 +1,7 @@
 tags
-test.sh
 .luarc.json
 nvim
+plugin/
+undodir/
+.netrwhist
 modular-old/

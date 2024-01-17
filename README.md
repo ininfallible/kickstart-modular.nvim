@@ -1,3 +1,8 @@
+# Derek's fork of kickstart for personal use
+- Neotree
+- Telekasten for note-taking
+- Total time to migrate from packer: 2 hrs
+
 # kickstart-modular.nvim
 
 https://github.com/kdheepak/kickstart.nvim/assets/1813121/f3ff9a2b-c31f-44df-a4fa-8a0d7b17cf7b
@@ -193,4 +198,3 @@ This requires:
 ```lua
 {'nvim-telescope/telescope-fzf-native.nvim', build = 'cmake -S. -Bbuild -DCMAKE_BUILD_TYPE=Release && cmake --build build --config Release && cmake --install build --prefix build' }
 ```
-

@@ -127,15 +127,23 @@ require('lazy').setup({
     },
   },
 
-  {
-    -- Theme inspired by Atom
-    'navarasu/onedark.nvim',
-    priority = 1000,
-    config = function()
-      vim.cmd.colorscheme 'onedark'
-    end,
-  },
-
+  -- {
+  --   -- Theme inspired by Atom
+  --   'navarasu/onedark.nvim',
+  --   priority = 1000,
+  --   config = function()
+  --     vim.o.fillchars = 'vert: ,horiz: ,eob: '
+  --     vim.cmd.colorscheme 'onedark'
+  --     require('onedark').setup {
+  --       style = 'warmer',
+  --       highlights = {
+  --         -- vim.api.nvim_set_hl(0, 'VertSplit' , {ctermbg = 238})
+  --         ["VertSplit"] = {bg = 'white'},
+  --       }
+  --     }
+  --     require('onedark').load()
+  --   end,
+  -- },
   {
     -- Set lualine as statusline
     'nvim-lualine/lualine.nvim',
@@ -143,7 +151,7 @@ require('lazy').setup({
     opts = {
       options = {
         icons_enabled = false,
-        theme = 'onedark',
+        theme = 'everforest',
         component_separators = '|',
         section_separators = '',
       },
@@ -191,6 +199,33 @@ require('lazy').setup({
     },
     build = ':TSUpdate',
   },
+
+  {
+    "nvim-neo-tree/neo-tree.nvim",
+    version = "*",
+    dependencies = {
+      "nvim-lua/plenary.nvim",
+      "nvim-tree/nvim-web-devicons", -- not strictly required, but recommended
+      "MunifTanjim/nui.nvim",
+    },
+    config = function ()
+      require("neo-tree").setup({
+        popup_border_style = "rounded",
+      })
+      vim.keymap.set('', '<C-n>', ':NeoTreeRevealToggle<CR>', {noremap = true, silent = true})
+      vim.api.nvim_set_hl(0, 'NeoTreeCursorLine' , {ctermbg = "DarkGray", bold = true})
+      vim.api.nvim_set_hl(0, 'NeoTreeDirectoryName' , {ctermfg = "Cyan"})
+      vim.api.nvim_set_hl(0, 'NeoTreeDirectoryIcon' , {ctermfg = "Cyan"})
+    end,
+  }
+  ,
+  {
+    "renerocksai/telekasten.nvim",
+    version = "*",
+    dependencies = {
+      'nvim-telescope/telescope.nvim',
+    }
+  }
 
   -- NOTE: Next Step on Your Neovim Journey: Add/Configure additional "plugins" for kickstart
   --       These are some example plugins that I've included in the kickstart repository.
