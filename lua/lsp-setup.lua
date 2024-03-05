@@ -78,9 +78,26 @@ local servers = {
   -- clangd = {},
   -- gopls = {},
   -- pyright = {},
-  -- rust_analyzer = {},
   -- tsserver = {},
   -- html = { filetypes = { 'html', 'twig', 'hbs'} },
+
+  rust_analyzer = {},
+
+  svelte = {
+    filetypes = { 'svelte' },
+    init_options = {
+      configuration = {
+        svelte = {
+          plugin = {
+            typescript = {
+              enable = false,
+              diagnostics = { enable = false }
+            }
+          }
+        }
+      }
+    }
+  },
 
   lua_ls = {
     Lua = {
