@@ -134,4 +134,11 @@ mason_lspconfig.setup_handlers {
   end,
 }
 
+-- vim.lsp.set_log_level("debug")
+require'lspconfig'.ocamllsp.setup{
+    -- When the root directory is undefined still enable LSP :')
+    single_file_support = true
+}
+
 -- vim: ts=2 sts=2 sw=2 et
+--
